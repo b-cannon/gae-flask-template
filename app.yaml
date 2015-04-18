@@ -1,0 +1,23 @@
+application: gae-flask-template
+version: 1
+runtime: python27
+api_version: 1
+threadsafe: yes
+
+handlers:
+- url: /favicon\.ico
+  static_files: favicon.ico
+  upload: favicon\.ico
+- url: /stylesheets
+  static_dir: templates/css
+- url: /css
+  static_dir: templates/css
+- url: /templates
+  static_dir: /templates
+
+- url: .*
+  script: main.app
+
+libraries:
+- name: jinja2
+  version: latest
